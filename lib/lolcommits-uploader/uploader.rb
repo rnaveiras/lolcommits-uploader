@@ -40,7 +40,8 @@ module Lolcommits
       @connection ||= Fog::Storage.new({
         :provider              => 'AWS',
         :aws_access_key_id     => config['aws_access_key_id'],
-        :aws_secret_access_key => config['aws_secret_access_key']
+        :aws_secret_access_key => config['aws_secret_access_key'],
+        :region => config['region']
       })
     end
     
