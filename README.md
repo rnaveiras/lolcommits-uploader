@@ -1,6 +1,6 @@
-# Lolcommits::Uploader
+# Lolcommits-uploader
 
-TODO: Write a gem description
+Upload your photos to S3
 
 ## Installation
 
@@ -16,9 +16,9 @@ Or install it yourself as:
 
     $ gem install lolcommits-uploader
 
-## Config
+## Configuration
 
-In your $HOME/.s3-uploader.yaml with the following:
+Put in your $HOME/.s3-uploader.yaml with the following:
 
 ```yaml
 aws_access_key_id: WADUSKEY
@@ -30,7 +30,13 @@ thumb_pixels: 32
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Tasks:
+  lolcommits-uploader disable      # disable uploader in post-commit
+  lolcommits-uploader enable       # enable uploder in post-commit
+  lolcommits-uploader upload       # upload the last commit photo
+  lolcommits-uploader upload_all   # upload all commits photos
+```
 
 ## Contributing
 
