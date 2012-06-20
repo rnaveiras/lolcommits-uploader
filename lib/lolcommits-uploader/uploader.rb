@@ -7,6 +7,15 @@ module Lolcommits
       upload_file repo.log.first.sha[0..10]
     end
 
+    desc "upload_all", "upload all commits photos"
+    def upload_all
+      Dir[File.expand_path("~/.lolcommits/#{repo_name}/*.jpg")].each do |filename|
+        match = filename.match(/\/([0-9a-f]+)\.jpg$/)
+        next unless match && !uploaded?(match[1])
+        upload_file match[1]
+      end
+    end
+
     desc "enable", "enable uploder in post-commit"
     def enable
       append_file "#{repo.dir.to_s}/.git/hooks/post-commit", "lolcommits-uploader upload &> /dev/null &"
@@ -18,6 +27,10 @@ module Lolcommits
     end
     
     private
+    
+    def uploaded?(sha)
+      bucket.files.head("#{repo_name}/#{sha}.jpg")
+    end
     
     def config
       @config ||= YAML::load(File.read(File.expand_path('~/.s3-uploader.yaml')))
