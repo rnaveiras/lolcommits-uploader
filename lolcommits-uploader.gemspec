@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["rnaveiras@gmail.com"]
   gem.description   = %q{lolcommits uploader to s3}
   gem.summary       = %q{lolcommits uploader to s3}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/rnaveiras/lolcommits-uploader"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
