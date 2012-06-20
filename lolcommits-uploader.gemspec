@@ -18,5 +18,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'fog'
   gem.add_dependency 'rmagick'
   gem.add_dependency 'git'
+  gem.add_dependency 'progressbar'
   
 end

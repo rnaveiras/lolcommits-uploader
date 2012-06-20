@@ -9,11 +9,15 @@ module Lolcommits
 
     desc "upload_all", "upload all commits photos"
     def upload_all
-      Dir[File.expand_path("~/.lolcommits/#{repo_name}/*.jpg")].each do |filename|
+      files = Dir[File.expand_path("~/.lolcommits/#{repo_name}/*.jpg")]
+      bar = ProgressBar.new('Uploading', files.size)
+      files.each do |filename|
         match = filename.match(/\/([0-9a-f]+)\.jpg$/)
         next unless match && !uploaded?(match[1])
         upload_file match[1]
+        bar.inc
       end
+      bar.finish
     end
 
     desc "enable", "enable uploder in post-commit"
