@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Lolcommits-uploader : lolcommits-uploader to S3" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Lolcommits-uploader</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/rnaveiras/lolcommits-uploader">View on GitHub</a>
+
+          <h1 id="project_title">Lolcommits-uploader</h1>
+          <h2 id="project_tagline">lolcommits-uploader to S3</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/rnaveiras/lolcommits-uploader/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/rnaveiras/lolcommits-uploader/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Lolcommits-uploader</h1>
+
+<p>Upload your photos to S3</p>
+
+<h2>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'lolcommits-uploader'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install lolcommits-uploader
+</code></pre>
+
+<h2>Configuration</h2>
+
+<p>Put in your $HOME/.s3-uploader.yaml with the following:</p>
+
+<div class="highlight">
+<pre><span class="l-Scalar-Plain">aws_access_key_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">WADUSKEY</span>
+<span class="l-Scalar-Plain">aws_secret_access_key</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">WADUSACCESS</span>
+<span class="l-Scalar-Plain">aws_bucket_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">WADUSBUCKET</span>
+<span class="l-Scalar-Plain">thumb_enable</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="l-Scalar-Plain">thumb_pixels</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">32</span>
+</pre>
+</div>
+
+
+<h2>Usage</h2>
+
+<pre><code>Tasks:
+  lolcommits-uploader disable      # disable uploader in post-commit
+  lolcommits-uploader enable       # enable uploder in post-commit
+  lolcommits-uploader upload       # upload the last commit photo
+  lolcommits-uploader upload_all   # upload all commits photos
+</code></pre>
+
+<h2>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Added some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Lolcommits-uploader maintained by <a href="https://github.com/rnaveiras">rnaveiras</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
